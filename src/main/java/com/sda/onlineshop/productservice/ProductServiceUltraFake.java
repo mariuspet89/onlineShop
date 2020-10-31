@@ -1,10 +1,12 @@
 package com.sda.onlineshop.productservice;
 
 import com.sda.onlineshop.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
+@Service("productServiceUltraFake")
 public class ProductServiceUltraFake implements ProductService  {
 
     public Map<String, List<Product>> getListProduct() {
@@ -20,5 +22,10 @@ public class ProductServiceUltraFake implements ProductService  {
     public List<Product> getAllProducts() {
 
         return getListProduct().get("abc");
+    }
+
+    @Override
+    public void addProduct(Product product) {
+
     }
 }
