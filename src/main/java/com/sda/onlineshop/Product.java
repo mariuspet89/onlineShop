@@ -1,19 +1,41 @@
 package com.sda.onlineshop;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+
 public class Product {
+
+
+    @Id
+    @GeneratedValue
     private int id;
+    @Column
     private String name;
+    @Column
     private String provider;
-    private double price;
-    private int quantity;
+    @Column
+    private Double price;
+    @Column
+    private Integer quantity;
+    @Column
     private String description;
+    @Column
     private String image;
+    @Column
     private String story;
+
 
     public Product() {
     }
 
-    public Product(int id, String name, String provider, double price, int quantity, String description, String image, String story) {
+
+
+    public Product(int id, String name, String provider, Double price, Integer quantity, String description, String image, String story) {
         this.id = id;
         this.name = name;
         this.provider = provider;
@@ -23,6 +45,8 @@ public class Product {
         this.image = image;
         this.story = story;
     }
+
+
 
     public int getId() {
         return id;
@@ -48,19 +72,19 @@ public class Product {
         this.provider = provider;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

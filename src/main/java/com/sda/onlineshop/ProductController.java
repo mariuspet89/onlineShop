@@ -2,13 +2,10 @@ package com.sda.onlineshop;
 
 
 import com.sda.onlineshop.productservice.ProductService;
-import com.sda.onlineshop.productservice.ProductServiceFakeImpl;
-import com.sda.onlineshop.productservice.ProductServiceUltraFake;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,13 +17,14 @@ public class ProductController {
     private final ProductService productService;
 
 
+
     @Autowired
-    public ProductController(@Qualifier("productServiceUltraFakeImpl") ProductService productService) {
+    public ProductController(@Qualifier("productServiceImpl") ProductService productService) {
         this.productService = productService;
     }
 
     //@GetMapping("/all")
-    @RequestMapping("/all")
+    @GetMapping("/all")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
